@@ -9,11 +9,12 @@
 #import "PhotosViewController.h"
 #import "TumblrCell.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import "DetailsViewController.h"
 
 @interface PhotosViewController ()
 @property NSArray<NSDictionary *> *posts;
 @property (weak, nonatomic) IBOutlet UITableView *tumblrTableView;
-
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @end
 
 @implementation PhotosViewController
@@ -22,10 +23,16 @@
     [super viewDidLoad];
     self.tumblrTableView.dataSource = self;
     // Do any additional setup after loading the view, typically from a nib.
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+    [self.tumblrTableView insertSubview:self.refreshControl atIndex:0];
     [self fetchData];
 }
 
-
+- (void) refreshData {
+    [self fetchData];
+    [self.refreshControl endRefreshing];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -33,6 +40,7 @@
 
 -(NSInteger)tableView:(UITableView *)movieTableView numberOfRowsInSection:(NSInteger)section {
     NSLog(@"numberOfRowsInSection");
+    NSLog(@"count:%lu",self.posts.count);
     return self.posts.count;
 }
 
@@ -78,7 +86,7 @@
                                                                                     options:kNilOptions
                                                                                       error:&jsonError];
                                                     
-                                                    // NSLog(@"Response: %@", responseDictionary);
+                                                     NSLog(@"Response: %@", responseDictionary);
                                                     self.posts = responseDictionary[@"response"][@"posts"];
                                                     // NSLog(@"%@", self.posts);
                                                     [self.tumblrTableView reloadData];
@@ -90,6 +98,14 @@
 
 }
 
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+        DetailsViewController *d = (DetailsViewController *)segue.destinationViewController;
+        
+        NSDictionary *post = [self.posts objectAtIndex:self.tumblrTableView.indexPathForSelectedRow.row];
+        NSString *urlString = [[post[@"photos"] objectAtIndex: 0][@"alt_sizes"] objectAtIndex:2][@"url"];
+        d.imageUrl = urlString;
+        NSLog(@"segue id:%@", segue);
+}
 
 @end

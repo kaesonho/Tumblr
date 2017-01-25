@@ -15,6 +15,7 @@
 		587F101A1E392335002A64A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 587F10191E392335002A64A2 /* Assets.xcassets */; };
 		587F101D1E392335002A64A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587F101B1E392335002A64A2 /* LaunchScreen.storyboard */; };
 		587F10261E3929AD002A64A2 /* TumblrCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 587F10251E3929AD002A64A2 /* TumblrCell.m */; };
+		C131E7921E3935B3003156BE /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C131E7911E3935B3003156BE /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		587F10251E3929AD002A64A2 /* TumblrCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TumblrCell.m; sourceTree = "<group>"; };
 		69AC734FDA3FBDCA9E21CFF5 /* Pods-Instgram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instgram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Instgram/Pods-Instgram.release.xcconfig"; sourceTree = "<group>"; };
 		8799ACD6E879610D6FAF168F /* Pods-Instgram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instgram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instgram/Pods-Instgram.debug.xcconfig"; sourceTree = "<group>"; };
+		C131E7901E3935B3003156BE /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		C131E7911E3935B3003156BE /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		E08F7DC17D030360315B35D5 /* libPods-Instgram.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Instgram.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -82,6 +85,8 @@
 				587F10131E392335002A64A2 /* PhotosViewController.h */,
 				587F10141E392335002A64A2 /* PhotosViewController.m */,
 				587F10161E392335002A64A2 /* Main.storyboard */,
+				C131E7901E3935B3003156BE /* DetailsViewController.h */,
+				C131E7911E3935B3003156BE /* DetailsViewController.m */,
 				587F10241E3929AD002A64A2 /* TumblrCell.h */,
 				587F10251E3929AD002A64A2 /* TumblrCell.m */,
 				587F10191E392335002A64A2 /* Assets.xcassets */,
@@ -231,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				587F10151E392335002A64A2 /* PhotosViewController.m in Sources */,
+				C131E7921E3935B3003156BE /* DetailsViewController.m in Sources */,
 				587F10261E3929AD002A64A2 /* TumblrCell.m in Sources */,
 				587F10121E392335002A64A2 /* AppDelegate.m in Sources */,
 				587F100F1E392335002A64A2 /* main.m in Sources */,
